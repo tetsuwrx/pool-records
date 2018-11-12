@@ -1,5 +1,5 @@
 <html>
-  <?php require('index_function.php'); ?>
+  <?php require_once('index_function.php'); ?>
   <head>
     <title>Pool Records</title>
     <meta name="viewport" content="width=device-width" >
