@@ -8,6 +8,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
   </head>
   <body>
-      <div><a href="<?php basename(__FILE__);?>">Goto top</a></div>
+      <?php echo '<p>Hello World</p>'; ?>
   </body>
 </html>
