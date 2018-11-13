@@ -11,7 +11,7 @@
   <div class="mainttl">
     <div class="mainbase">メインメニュー</div>
     <div class="mains0">
-      <form method="post" action="regist.php" target="regist" name="form0">
+      <form method="post" action="regist.php" target="_self" name="form0">
         <div class="main">
           <input class="mainsubmit" type="submit" name="a4" value="メンバー登録">
         </div>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="mains1">
-      <form method="post" action="regist.php" target="regist" name="form1">
+      <form method="post" action="regist.php" target="_self" name="form1">
         <div class="main">
           <input class="mainsubmit" type="submit" name="a3" value="リーグ戦ランキング">
         </div>
