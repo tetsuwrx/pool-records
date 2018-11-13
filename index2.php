@@ -1,5 +1,5 @@
 <html>
-  <?php include 'index_function.php'; ?>
+
   <head>
     <title>Pool Records</title>
     <meta name="viewport" content="width=device-width" >
@@ -8,6 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
   </head>
   <body>
+      <?php include 'index_function.php'; ?>
       <?php echo '<p>Hello World</p>'; ?>
   </body>
 </html>
