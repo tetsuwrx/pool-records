@@ -13,7 +13,7 @@
     <div class="mains0">
       <div class="main">
         <!-- <input class="mainsubmit" type="submit" name="a4" value="メンバー登録"> -->
-        <a href="regist.php">メンバー登録</a>
+        <a href="regist.php" class="mainsubmit">メンバー登録</a>
       </div>
       <div class="mainball0">
         <div class="ballNomber">1</div>
