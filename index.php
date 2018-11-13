@@ -8,8 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     </head>
     <body>
-        <a href="<?php basename(__FILE__);?>">Goto top</a></div>
-        </div>
+        <div><a href="<?php basename(__FILE__);?>">Goto top</a></div>
         <?php      if($_POST['GologinPage'] || $_POST['loginbtn']){ //ログイン画面 ?>
             <form name="login" method="POST" action="<?php basename(__FILE__);?>">
                 <?php if($_POST['GologinPage']){ ?>
