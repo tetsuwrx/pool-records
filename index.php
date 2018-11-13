@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="mains1">
-      <form method="post" action="regist.php" target="_self" name="form1">
+      <form method="post" action="ranking.php" target="_self" name="form1">
         <div class="main">
           <input class="mainsubmit" type="submit" name="a3" value="リーグ戦ランキング">
         </div>
