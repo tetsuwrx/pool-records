@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <?php require_once("index_function.php");?>
+    <?php require_once("../controllers/ControllerBase.php");?>
     <head>
         <meta name="viewport" content="width=device-width" >
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <script type="text/javascript" src="index.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/index.js"></script>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     </head>
     <body>
@@ -23,23 +23,23 @@
             </form>
         <?php exit; ?>
         <?php } ?>
-        <?php      if($_POST['a0'] or $debug=="0" or $_POST['JSPOST']=="a0"){ $n=$_POST["ax0"]; //ボーラード ?> 
+        <?php      if($_POST['a0'] or $debug=="0" or $_POST['JSPOST']=="a0"){ $n=$_POST["ax0"]; //ボーラード ?>
             <title><?php echo $menu[$n]['title'];?></title>
             <form name="f0" method="POST" action="<?php basename(__FILE__);?>">
             <input type="hidden" name="ax0" value="<?php echo $n;?>">
-            <div><?php echo $menu[$n]['title'];?></div> 
-            <img src="kojicyu.gif" width="90%" height="90%" alt="工事ちゅう">
+            <div><?php echo $menu[$n]['title'];?></div>
+            <img src="images/kojicyu.gif" width="90%" height="90%" alt="工事ちゅう">
             <div style="text-align:center;"></div>
             <?php exit;?>
                 <input class="a0sub" type="submit" name="a0submit" value="あああ" onclick="a0datacheck()"></div>
-            </form>       
+            </form>
             <!-- ここから適当-->
             <?php for($n=1;$n<=9;$n++){ ?>
                 <div class="brd">
                     <div class="fbrd">
                         <div class="fram"><p class="text0"><?php echo $n;?></p></div>
-                    </div>              
-                    <div class="fbrd">  
+                    </div>
+                    <div class="fbrd">
                         <div class="abrd"><input onchange="x<?php echo $n;?>_Change()" class="abrd" typle="number" name="a<?php echo $n;?>"></div>
                         <div class="bbrd"><input onchange="x<?php echo $n;?>_Change()" class="bbrd" typle="number" name="b<?php echo $n;?>"></div>
                     </div>
@@ -51,8 +51,8 @@
             <div class="brd">
                 <div class="fbrd">
                     <div class="fram10"><p class="text0"><?php echo "10";?></p></div>
-                </div>              
-                <div class="fbrd">  
+                </div>
+                <div class="fbrd">
                     <div class="abrd10"><input class="abrd10" typle="number"></div>
                     <div class="bbrd10"><input class="bbrd10" typle="number"></div>
                     <div class="cbrd10"><input class="cbrd10" typle="number"></div>
@@ -60,7 +60,7 @@
                 <div class="fbrd">
                     <div class="Sbrd10"><input class="Sbrd10" type="number"></div>
                 </div>
-            </div>    
+            </div>
             </form>
         <?php }elseif($_POST['a1'] or $debug=="1" or $_POST['JSPOST']=="a1"){ $n=$_POST["ax1"]; //リーグ戦入力 ?>
             <?php
@@ -116,7 +116,7 @@
                                     <?php } ?>
                                     <?php for($n=0;$n<=7;$n++){?><option value="◎-<?php echo $n;?>">◎-<?php echo $n;?></option><?php } ?>
                                 </select>
-                            </div>                            
+                            </div>
                             <?php if($WinUser=="A"){ ?>
                                 <div class="a1winnerWINNER">WINNER</div>
                             <?php }elseif($WinUser=="B"){ ?>
@@ -171,16 +171,16 @@
                 <input class="a1winner"  name="a1winner" type="hidden" value="<?php echo $WinUser ?>">
                 <input type="hidden" name="JSPOST" value="a1">
             </form>
-        <?php }elseif($_POST['a2'] or $debug=="2" or $_POST['JSPOST']=="a2"){ $n=$_POST["ax2"]; //ボーラード結果 ?> 
+        <?php }elseif($_POST['a2'] or $debug=="2" or $_POST['JSPOST']=="a2"){ $n=$_POST["ax2"]; //ボーラード結果 ?>
             <title><?php echo $menu[$n]['title'];?></title>
             <form name="f2" method="POST" action="<?php basename(__FILE__);?>">
             <input type="hidden" name="ax2" value="<?php echo $n;?>">
-            <div><?php echo $menu[$n]['title'];?></div> 
-            <img src="kojicyu.gif" width="90%" height="90%" alt="工事ちゅう">
+            <div><?php echo $menu[$n]['title'];?></div>
+            <img src="images/kojicyu.gif" width="90%" height="90%" alt="工事ちゅう">
             <div style="text-align:center;"></div>
             <?php exit;?>
                 <input class="a2sub" type="submit" name="a2submit" value="あああ" onclick="a0datacheck()"></div>
-            </form>  
+            </form>
         <?php }elseif($_POST['a3'] or $debug=="3" or $_POST['JSPOST']=="a3"){ $n=$_POST["ax3"]; //リーグ戦ランキング ?>
             <?php if($_POST['a3date']){ ?>
                 <?php  $sd = Mk_end_date($_POST["a3date"],$_POST['a3radio']);?>
@@ -193,20 +193,20 @@
                 <div class="a3menu"><?php echo $menu[$n]['title'];?></div>
                 <div class="a3ttl">
                     <div class="a3main">
-                        <div class="a3date"> 
+                        <div class="a3date">
                         <input type="date" name="a3date" class="a3date" value="<?php if($_POST['a3date']<>Null){echo $_POST['a3date'];}else{echo date('Y-m-d');}?>">
                         </div>
-                        <div class="a3date"> 
+                        <div class="a3date">
                         <input type="submit" name="a3submit" class="a3submit" value="検索">
                         </div>
-                        <div class="a3radio"> 
+                        <div class="a3radio">
                             <input type="radio" name="a3radio" class="a3radio" value="A" <?php if($_POST['a3radio']=="A"){ ?> checked <?php } ?>>検索日まで
                             <input type="radio" name="a3radio" class="a3radio" value="B" <?php if($_POST['a3radio']=="B"){ ?> checked <?php } ?>>検索日を含む
                         </div>
                     </div>
                     <?php if($_POST['a3submit']){ ?>
                         <?php for($n=0;$n<=count($battleSEt)-1;$n++){?>
-                            <div class="a3result"> 
+                            <div class="a3result">
                                 <div class="a3rank"><?php $x=$n+1; echo $x."位";?></div>
                                 <div class="a3name"><?php echo $battleSEt[$n]['yname'];?></div>
                                 <div class="a3point"><?php echo $battleSEt[$n]['ttlscore']."pt.";?></div>
@@ -216,7 +216,7 @@
                 </div>
                 <input type="hidden" name="JSPOST" value="a3">
             </form>
-        <?php }elseif($_POST['a4'] or $debug=="4" or $_POST['JSPOST']=="a4"){ $n=$_POST["ax4"]; //メンバー登録 ?> 
+        <?php }elseif($_POST['a4'] or $debug=="4" or $_POST['JSPOST']=="a4"){ $n=$_POST["ax4"]; //メンバー登録 ?>
             <title><?php echo $menu[$n]['title'];?></title>
             <?php
                 if($_POST['a4name']<>Null){
@@ -234,18 +234,18 @@
                     <div class="a4menu"><?php echo $menu[$n]['title'];?></div>
                     <div class="a4ttl">
                         <div class="a4main">
-                            <div class="a4r0">                       
+                            <div class="a4r0">
                             <input class="a4No" type="text" name="a4hidden" value="<?php if($_POST['a4No']<>Null){echo $_POST['a4No'];}else{echo "No";};?>" disabled="disabled">
                             <input type="hidden" name="a4No" value="<?php if($_POST['a4No']<>Null){echo $_POST['a4No'];}else{echo "No";};?>">
                             </div>
                         </div>
                         <div class="a4main">
-                            <div class="a4r1">                       
+                            <div class="a4r1">
                             <input class="a4name" onclick="a4nameckick()" onchange="a4namechange()" type="text" name="a4name" value="<?php if($_POST['a4name']<>Null){echo $_POST['a4name'];}else{echo "ニックネーム";};?>">
                             </div>
                         </div>
                         <div class="a4main">
-                            <div class="a4r2">                       
+                            <div class="a4r2">
                             <select class="a4Rank" name="a4Rank">
                                 <?php if($_POST['a4Rank']<>Null){?>
                                     <option value="<?php echo $_POST['a4Rank'];?>" selected><?php echo $_POST['a4Rank'];?></option>
@@ -258,7 +258,7 @@
                             </div>
                         </div>
                         <div class="a4main">
-                            <div class="a4r3">                       
+                            <div class="a4r3">
                             <select class="a4sex" name="a4sex">
                                 <?php if($_POST['a4sex']<>Null){?>
                                     <option value="<?php echo $_POST['a4sex'];?>" selected><?php echo $_POST['a4sex'];?></option>
@@ -270,23 +270,23 @@
                             </div>
                         </div>
                         <div class="a4main">
-                            <div class="a4r4">                       
+                            <div class="a4r4">
                             <input class="a4submit" type="submit" name="a4submit" value="<?php echo $_POST['btnval'];?>">
                             </div>
                         </div>
-                    </div>  
+                    </div>
                     <input type="hidden" name="JSPOST" value="a4">
                 </form>
-        <?php }elseif($_POST['a5'] or $debug=="5" or $_POST['JSPOST']=="a5"){ $n=$_POST["ax5"]; //対戦分析 ?> 
+        <?php }elseif($_POST['a5'] or $debug=="5" or $_POST['JSPOST']=="a5"){ $n=$_POST["ax5"]; //対戦分析 ?>
             <title><?php echo $menu[$n]['title'];?></title>
             <form name="f5" method="POST" action="<?php basename(__FILE__);?>">
             <input type="hidden" name="ax5" value="<?php echo $n;?>">
-            <div><?php echo $menu[$n]['title'];?></div> 
-            <img src="kojicyu.gif" width="90%" height="90%" alt="工事ちゅう">
+            <div><?php echo $menu[$n]['title'];?></div>
+            <img src="images/kojicyu.gif" width="90%" height="90%" alt="工事ちゅう">
             <div style="text-align:center;"></div>
             <?php exit;?>
                 <input class="a2sub" type="submit" name="a2submit" value="あああ" onclick="a0datacheck()"></div>
-            </form>   
+            </form>
         <?php }else{ //<!--メインメニュー--> ?>
             <title><?php echo $mainmenu;?></title>
             <div class="mainttl">
@@ -297,11 +297,11 @@
                         <div class="mains<?php echo $n;?>">
                         <div class="main">
                             <input type="hidden" name="ax<?php echo $menu[$n]['menuNo'];?>" value="<?php echo $n;?>">
-                            <input class="mainsubmit" type="submit" name="a<?php echo $menu[$n]['menuNo'];?>" value="<?php echo $menu[$n]['title'];?>">                         
+                            <input class="mainsubmit" type="submit" name="a<?php echo $menu[$n]['menuNo'];?>" value="<?php echo $menu[$n]['title'];?>">
                             </div>
                             <div class="mainball<?php echo $n;?>">
                                 <div class="ballNomber"><?php echo $n+1;?></div>
-                            </div>                 
+                            </div>
                         </div>
                     <?php } ?>
                 </form>
@@ -317,4 +317,3 @@
 </html>
 
 <?php exit; ?>
-

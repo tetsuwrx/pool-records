@@ -1,0 +1,3 @@
+<VirtualHost *>
+    DocumentRoot /app/public_html/htdocs
+</VirtualHost>
