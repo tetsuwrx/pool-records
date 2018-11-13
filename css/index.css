@@ -48,6 +48,7 @@ body *{font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans
         font-weight:bold;}
     div.main{position:absolute;width:calc(100%-10vw);height:10vh;margin-left:10vw;}
     input.mainsubmit{position:relative;width:calc(80vw);height:10vh;background:none;border:none;font-size:3vh;font-weight:bold;text-align:left;}
+    a.mainsubmit{position:relative;width:calc(80vw);height:10vh;background:none;border:none;font-size:3vh;font-weight:bold;text-align:left;}
 /*a0*/
     div.m0{clear:left;}
     p.text0{color:white;}
@@ -123,7 +124,7 @@ body *{font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans
             div.a3rank{text-align:left;width:20vw;float:left;font-size:3.5vh;padding-top:2.5vh;}
             div.a3name{text-align:center;width:40vw;float:left;font-size:3.5vh;padding-top:2.5vh;}
             div.a3point{text-align:right;width:30vw;float:left;font-size:3.5vh;padding-top:3vh;}
-            div.a3radio{width:100%;height:3vh;float:left;margin-bottom:1vh;margin-left:4vw;} 
+            div.a3radio{width:100%;height:3vh;float:left;margin-bottom:1vh;margin-left:4vw;}
 /*a4*/
     div.a4menu{text-align:center;margin-top:2vh;font-size:1.8em;padding-top:0.1em;clear:left;width:100%;background:none;color:rgb(102, 102, 102);font-weight: bold;}
     div.a4ttl{margin-top:2vh;width:96vw;height:60vh;background:linear-gradient(160deg, rgb(204, 255, 63), rgb(255, 43, 244));}
@@ -134,5 +135,4 @@ body *{font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans
             div.a4r1{background:linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.75));border-left:solid 8vw; border-color:grey;}
             div.a4r2{background:linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.75));border-left:solid 8vw; border-color:grey;}
             div.a4r3{background:linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.75));border-left:solid 8vw; border-color:grey;}
-            div.a4r4{background:linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.75));border-left:solid 8vw; border-color:grey;}      
-
+            div.a4r4{background:linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.75));border-left:solid 8vw; border-color:grey;}
