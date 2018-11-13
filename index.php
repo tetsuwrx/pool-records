@@ -31,36 +31,44 @@
     </form>
     </div>
     <div class="mains2">
-      <div class="main">
-        <input class="mainsubmit" type="submit" name="a5" value="対戦分析">
-      </div>
-      <div class="mainball2">
-        <div class="ballNomber">3</div>
-      </div>
+      <form method="post" action="report.php" target="_self" name="form2">
+        <div class="main">
+          <input class="mainsubmit" type="submit" name="a5" value="対戦分析">
+        </div>
+        <div class="mainball2">
+          <div class="ballNomber">3</div>
+        </div>
+      </form>
     </div>
     <div class="mains3">
-      <div class="main">
-        <input class="mainsubmit" type="submit" name="a0" value="ボーラードに挑戦">
-      </div>
-      <div class="mainball3">
-        <div class="ballNomber">4</div>
-      </div>
+      <form method="post" action="bowlards.php" target="_self" name="form3">
+        <div class="main">
+          <input class="mainsubmit" type="submit" name="a0" value="ボーラードに挑戦">
+        </div>
+        <div class="mainball3">
+          <div class="ballNomber">4</div>
+        </div>
+      </form>
     </div>
     <div class="mains4">
-      <div class="main">
-        <input class="mainsubmit" type="submit" name="a2" value="ボーラード結果">
-      </div>
-      <div class="mainball4">
-        <div class="ballNomber">5</div>
-      </div>
+      <form method="post" action="bowlards_score.php" target="_self" name="form4">
+        <div class="main">
+          <input class="mainsubmit" type="submit" name="a2" value="ボーラード結果">
+        </div>
+        <div class="mainball4">
+          <div class="ballNomber">5</div>
+        </div>
+      </form>
     </div>
     <div class="mains5">
-      <div class="main">
-        <input class="mainsubmit" type="submit" name="a1" value="リーグ戦結果入力(店員用)">
-      </div>
-      <div class="mainball5">
-        <div class="ballNomber">6</div>
-      </div>
+      <form method="post" action="score_entry.php" target="_self" name="form5">
+        <div class="main">
+          <input class="mainsubmit" type="submit" name="a1" value="リーグ戦結果入力(店員用)">
+        </div>
+        <div class="mainball5">
+          <div class="ballNomber">6</div>
+        </div>
+      </form>
     </div>
   </div>
 </body>
