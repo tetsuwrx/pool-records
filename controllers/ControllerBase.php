@@ -122,8 +122,8 @@
 //a1 リーグ戦入力
     //獲得勝利数がclassのMAXになっていたらWINをつける
         function Calculation_WL($ynameA,$scoreA,$ynameB,$scoreB,$winnerData,$RankPoints){
-            $RankA = Srch_AryDta_toArycol('controllers/member.txt',$ynameA,1,2);
-            $RankB = Srch_AryDta_toArycol('controllers/member.txt',$ynameB,1,2);
+            $RankA = Srch_AryDta_toArycol('/controllers/member.txt',$ynameA,1,2);
+            $RankB = Srch_AryDta_toArycol('/controllers/member.txt',$ynameB,1,2);
             $x=0;
                 for($n=0;$n<=count($RankPoints)-1;$n++){
                     if($RankA==$RankPoints[$n]['Rank']){$WinScore[0]=$RankPoints[$n]['Point'];$x++;break;}
@@ -148,10 +148,10 @@
                 if($masuB==Null || $masuB=="" || $masuB=="◎"){echo "<script>alert('Bのマス割り数が選択されていません。');</script>";goto repage;}
                 if($winner==Null || $winner==""){echo "<script>alert('勝者が選択されていません。');</script>";goto repage;}
             //テキストデータ取得
-                $bdset = Get_textDataSet('controllers/battledata.txt');
+                $bdset = Get_textDataSet('/controllers/battledata.txt');
             //ユーザー名→Key取得
-                $yNomberA = Srch_AryDta_toArycol('member.txt',$ynameA,1,0);
-                $yNomberB = Srch_AryDta_toArycol('member.txt',$ynameB,1,0);
+                $yNomberA = Srch_AryDta_toArycol('/controllers/member.txt',$ynameA,1,0);
+                $yNomberB = Srch_AryDta_toArycol('/controllers/member.txt',$ynameB,1,0);
 
             //リーグ戦期間中の初戦・２戦目か判定
                 $nmSet[0] = $ynameA."-VS-".$ynameB;
@@ -190,11 +190,11 @@
                 $masuA = maru_Henkan($masuA);
                 $masuB = maru_Henkan($masuB);
                 $DataAry = array($yNomberA,$scoreA,$pointA,$yNomberB,$scoreB,$pointB,$winner,$battledate,$masuA,$masuB);
-                $C = TEXT_DATA_add_to('controllers/battledata.txt',$DataAry);
+                $C = TEXT_DATA_add_to('/controllers/battledata.txt',$DataAry);
             //member.txt の日付を変更
                 $SetDataS[0] =Array(Null,$yNomberA,Null,Null,Null,$ed);
                 $SetDataS[1] =Array(Null,$yNomberB,Null,Null,Null,$ed);
-                $Comment = Change_TXT_data('1',$SetDataS,'member.txt');
+                $Comment = Change_TXT_data('1',$SetDataS,'/controllers/member.txt');
             //最終処理
                 echo "<script>alert('対戦成績を登録しました。');</script>"; //ここ成功したらにすべき？
                 $rtnval = array('nameA' => Null,'nameB' => Null,'scoreA' => Null,'scoreB' => Null,'winner' => Null,'masuA' => Null,'masuB' => Null);
@@ -240,7 +240,7 @@
         return $sd;
         }
     function Sum_battle_result($sd,$ed){
-        $bd = Get_textDataSet('controllers/battledata.txt');
+        $bd = Get_textDataSet('/controllers/battledata.txt');
         $user = array();$m=1;
         $user[0] = array('yname' => Null,'ttlscore' => Null);
         for($n=0;$n<=count($bd)-1;$n++){
@@ -317,7 +317,7 @@
         }
     function a4saveinp($No,$yname,$yclass,$sex){
         $SetDataS[0] =Array($No,$yname,$yclass,$sex,Null,date('Y-m-d'));
-        $C = Change_TXT_data('0',$SetDataS,'member.txt');
+        $C = Change_TXT_data('0',$SetDataS,'/controllers/member.txt');
         if($C == true){
             echo "<script>alert('登録内容を変更しました。');</script>";
         }else{
