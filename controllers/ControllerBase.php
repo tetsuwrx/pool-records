@@ -122,8 +122,8 @@
 //a1 リーグ戦入力
     //獲得勝利数がclassのMAXになっていたらWINをつける
         function Calculation_WL($ynameA,$scoreA,$ynameB,$scoreB,$winnerData,$RankPoints){
-            $RankA = Srch_AryDta_toArycol('member.txt',$ynameA,1,2);
-            $RankB = Srch_AryDta_toArycol('member.txt',$ynameB,1,2);
+            $RankA = Srch_AryDta_toArycol('controllers/member.txt',$ynameA,1,2);
+            $RankB = Srch_AryDta_toArycol('controllers/member.txt',$ynameB,1,2);
             $x=0;
                 for($n=0;$n<=count($RankPoints)-1;$n++){
                     if($RankA==$RankPoints[$n]['Rank']){$WinScore[0]=$RankPoints[$n]['Point'];$x++;break;}
@@ -148,7 +148,7 @@
                 if($masuB==Null || $masuB=="" || $masuB=="◎"){echo "<script>alert('Bのマス割り数が選択されていません。');</script>";goto repage;}
                 if($winner==Null || $winner==""){echo "<script>alert('勝者が選択されていません。');</script>";goto repage;}
             //テキストデータ取得
-                $bdset = Get_textDataSet('battledata.txt');
+                $bdset = Get_textDataSet('controllers/battledata.txt');
             //ユーザー名→Key取得
                 $yNomberA = Srch_AryDta_toArycol('member.txt',$ynameA,1,0);
                 $yNomberB = Srch_AryDta_toArycol('member.txt',$ynameB,1,0);
@@ -190,7 +190,7 @@
                 $masuA = maru_Henkan($masuA);
                 $masuB = maru_Henkan($masuB);
                 $DataAry = array($yNomberA,$scoreA,$pointA,$yNomberB,$scoreB,$pointB,$winner,$battledate,$masuA,$masuB);
-                $C = TEXT_DATA_add_to('battledata.txt',$DataAry);
+                $C = TEXT_DATA_add_to('controllers/battledata.txt',$DataAry);
             //member.txt の日付を変更
                 $SetDataS[0] =Array(Null,$yNomberA,Null,Null,Null,$ed);
                 $SetDataS[1] =Array(Null,$yNomberB,Null,Null,Null,$ed);
@@ -240,7 +240,7 @@
         return $sd;
         }
     function Sum_battle_result($sd,$ed){
-        $bd = Get_textDataSet('battledata.txt');
+        $bd = Get_textDataSet('controllers/battledata.txt');
         $user = array();$m=1;
         $user[0] = array('yname' => Null,'ttlscore' => Null);
         for($n=0;$n<=count($bd)-1;$n++){
