@@ -1,33 +1,59 @@
-<?php
-
-// システムのルートディレクトリパス
-define('ROOT_PATH', realpath(dirname(__FILE__) . '/'));
-// ライブラリのディレクトリパス
-define('LIB_PATH', realpath(dirname(__FILE__) . '/library'));
-
-// ライブラリとモデルのディレクトリをinclude_pathに追加
-$includes = array(LIB_PATH . '/mvc', ROOT_PATH . '/models');
-$incPath = implode(PATH_SEPARATOR, $includes);
-set_include_path(get_include_path() . PATH_SEPARATOR . $incPath);
-
-// クラスのオートロード
-function __autoload($className){
-    require_once $className . ".php";
-}
-
-// データベース接続情報設定
-$connInfo = array(
-    'host'     => 'localhost',
-    'dbname'   => 'sample',
-    'dbuser'   => 'hoge',
-    'password' => 'xxxxxxxx'
-);
-ModelBase::setConnectionInfo($connInfo);
-
-// リクエスト処理
-$dispatcher = new Dispatcher();
-$dispatcher->setSystemRoot(ROOT_PATH);
-$dispatcher->dispatch();
-
-
-?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pool Records</title>
+</head>
+<body>
+  <div class="mainttl">
+    <div class="mainbase">メインメニュー</div>
+    <div class="mains0">
+      <div class="main">
+        <input class="mainsubmit" type="submit" name="a4" value="メンバー登録">
+      </div>
+      <div class="mainball0">
+        <div class="ballNomber">1</div>
+      </div>
+    </div>
+    <div class="mains1">
+      <div class="main">
+        <input class="mainsubmit" type="submit" name="a3" value="リーグ戦ランキング">
+      </div>
+      <div class="mainball1">
+        <div class="ballNomber">2</div>
+      </div>
+    </div>
+    <div class="mains2">
+      <div class="main">
+        <input class="mainsubmit" type="submit" name="a5" value="対戦分析">
+      </div>
+      <div class="mainball2">
+        <div class="ballNomber">3</div>
+      </div>
+    </div>
+    <div class="mains3">
+      <div class="main">
+        <input class="mainsubmit" type="submit" name="a0" value="ボーラードに挑戦">
+      </div>
+      <div class="mainball3">
+        <div class="ballNomber">4</div>
+      </div>
+    </div>
+    <div class="mains4">
+      <div class="main">
+        <input class="mainsubmit" type="submit" name="a2" value="ボーラード結果">
+      </div>
+      <div class="mainball4">
+        <div class="ballNomber">5</div>
+      </div>
+    </div>
+    <div class="mains5">
+      <div class="main">
+        <input class="mainsubmit" type="submit" name="a1" value="リーグ戦結果入力(店員用)">
+      </div>
+      <div class="mainball5">
+        <div class="ballNomber">6</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
