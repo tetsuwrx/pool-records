@@ -2,9 +2,9 @@
 //base_Array_data & .txtData_info
     //member.txt(key,Name,Class,Sex,登録日,更新日)
     //battledata.txt(key1,scoreA,pointA,key2,scoreB,pointB,winner,date,masuA,$masuB)
-    mb_language("Japanese");
+    //mb_language("Japanese");
     //mb_internal_encoding("EUC-JP");
-    mb_internal_encoding("UTF-8");
+    //mb_internal_encoding("UTF-8");
     date_default_timezone_set('Asia/Tokyo');
     $mainmenu = "メインメニュー";
     $menu = array(
