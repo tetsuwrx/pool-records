@@ -34,30 +34,30 @@
     //SESSION
         function Start_Login_Session($PW){
 
-        }    
+        }
     //マス割りの◎を削除
         function maru_Henkan($data){
             $result =str_replace("◎-","",$data);
             return $result;
             }
     //並び替えとかにつかう Array_Column
-        function array_column ($target_data, $column_key, $index_key = null) {
-            if (is_array($target_data) === FALSE || count($target_data) === 0) return FALSE;
-            $result = array();
-            foreach ($target_data as $array) {
-                if (array_key_exists($column_key, $array) === FALSE) continue;
-                if (is_null($index_key) === FALSE && array_key_exists($index_key, $array) === TRUE) {
-                    $result[$array[$index_key]] = $array[$column_key];
-                    continue;
-                }
-                $result[] = $array[$column_key];
-            }
-            if (count($result) === 0) return FALSE;
-            return $result;
-            }
-    //テキストデータ全体を引っ張ってくるやつ    
-        function Get_textDataSet($fileNm){   
-            $fp=fopen($fileNm,'r');         
+    //    function array_column ($target_data, $column_key, $index_key = null) {
+    //        if (is_array($target_data) === FALSE || count($target_data) === 0) return FALSE;
+    //        $result = array();
+    //        foreach ($target_data as $array) {
+    //            if (array_key_exists($column_key, $array) === FALSE) continue;
+    //            if (is_null($index_key) === FALSE && array_key_exists($index_key, $array) === TRUE) {
+    //                $result[$array[$index_key]] = $array[$column_key];
+    //                continue;
+    //            }
+    //            $result[] = $array[$column_key];
+    //        }
+    //        if (count($result) === 0) return FALSE;
+    //        return $result;
+    //        }
+    //テキストデータ全体を引っ張ってくるやつ
+        function Get_textDataSet($fileNm){
+            $fp=fopen($fileNm,'r');
             $n=0;
             while(!feof($fp)){
                 $List[$n] = fgets($fp);
@@ -71,7 +71,7 @@
     //テキストのarray番号からデータ呼び出してくれるやつ
         function Srch_AryDta_toArycol($fileNm,$SearchData,$ScerchColumnNo,$OutcolumnNo){
             $Lists = Get_textDataSet($fileNm);
-            for($n=0;$n<=count($Lists)-1;$n++){ 
+            for($n=0;$n<=count($Lists)-1;$n++){
                 if($SearchData == $Lists[$n][$ScerchColumnNo]){
                     return str_replace("\n,","",$Lists[$n][$OutcolumnNo]);
                     exit;
@@ -104,7 +104,7 @@
                 }else{
                     @fwrite($a, "\n".implode(",",$Lists[$n]));
                 }
-            }    
+            }
             fclose($a);
             return true;
         }
@@ -143,7 +143,7 @@
                 if($ynameB==Null || $ynameB=="" || $ynameB=="name"){echo "<script>alert('対戦者Bが選択されていません。');</script>";goto repage;}
                 if($ynameA==$ynameB){echo "<script>alert('対戦者Aと対戦者Bが同名です。');</script>";goto repage;}
                 if($scoreA==Null || $scoreA=="" || $scoreA=="score"){echo "<script>alert('得点Aが入力されていません。');</script>";goto repage;}
-                if($masuA==Null || $masuA=="" || $masuA=="◎"){echo "<script>alert('Aのマス割り数が選択されていません。');</script>";goto repage;}        
+                if($masuA==Null || $masuA=="" || $masuA=="◎"){echo "<script>alert('Aのマス割り数が選択されていません。');</script>";goto repage;}
                 if($scoreB==Null || $scoreB=="" || $scoreB=="score"){echo "<script>alert('得点Bが入力されていません。');</script>";goto repage;}
                 if($masuB==Null || $masuB=="" || $masuB=="◎"){echo "<script>alert('Bのマス割り数が選択されていません。');</script>";goto repage;}
                 if($winner==Null || $winner==""){echo "<script>alert('勝者が選択されていません。');</script>";goto repage;}
@@ -258,7 +258,7 @@
                 }else{
                     $user[$R]['ttlscore'] = $user[$R]['ttlscore'] + $bd[$n][5];
                 }
-            }     
+            }
         }
         //array[0]排除 userNo を名前に変換
             for($n=1;$n<=count($user)-1;$n++){
@@ -274,7 +274,7 @@
         exit;
         }
 //a4　ユーザー登録　デバッグスミ(mySQL用もつくる？)
-    function a4nameCheck($No,$yname,$yclass,$sex){  
+    function a4nameCheck($No,$yname,$yclass,$sex){
         $members = Get_textDataSet('member.txt');
         if($No==Null || $No=="No"){ //ナンバーが入っていない
             for($n=0;$n<=count($members);$n++){
@@ -296,7 +296,7 @@
             }else{  //ナンバーが入っている
                 $comment = a4saveinp($No,$yname,$yclass,$sex);  //内容変更
             }
-            return $comment;        
+            return $comment;
         exit;
         repage:
         $rtnval = array('No' => $No,'name' => $yname,'Rank' => $yclass,'sex' => $sex,'btnval' => Null);
@@ -326,5 +326,5 @@
         $rtnval = array('No' => Null,'name' => Null,'Rank' => Null,'sex' => Null,'btnval' => Null);
         return $rtnval;
         }
-        
+
 ?>
