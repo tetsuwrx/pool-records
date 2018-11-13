@@ -11,10 +11,11 @@
   <div class="mainttl">
     <div class="mainbase">メインメニュー</div>
     <div class="mains0">
+      <form method="post" action="regist.php" target="regist" name="form0">
       <div class="main">
-        <!-- <input class="mainsubmit" type="submit" name="a4" value="メンバー登録"> -->
-        <a href="regist.php" class="mainsubmit">メンバー登録</a>
+        <input class="mainsubmit" type="submit" name="a4" value="メンバー登録">
       </div>
+      </form>
       <div class="mainball0">
         <div class="ballNomber">1</div>
       </div>
