@@ -12,21 +12,23 @@
     <div class="mainbase">メインメニュー</div>
     <div class="mains0">
       <form method="post" action="regist.php" target="regist" name="form0">
-      <div class="main">
-        <input class="mainsubmit" type="submit" name="a4" value="メンバー登録">
-      </div>
-      </form>
-      <div class="mainball0">
-        <div class="ballNomber">1</div>
-      </div>
+        <div class="main">
+          <input class="mainsubmit" type="submit" name="a4" value="メンバー登録">
+        </div>
+        </form>
+        <div class="mainball0">
+          <div class="ballNomber">1</div>
+        </div>
     </div>
     <div class="mains1">
-      <div class="main">
-        <input class="mainsubmit" type="submit" name="a3" value="リーグ戦ランキング">
-      </div>
-      <div class="mainball1">
-        <div class="ballNomber">2</div>
-      </div>
+      <form method="post" action="regist.php" target="regist" name="form1">
+        <div class="main">
+          <input class="mainsubmit" type="submit" name="a3" value="リーグ戦ランキング">
+        </div>
+        <div class="mainball1">
+          <div class="ballNomber">2</div>
+        </div>
+    </form>
     </div>
     <div class="mains2">
       <div class="main">
