@@ -1,0 +1,22 @@
+<response>
+  <matchdata>
+    <matchno>1</matchno>
+    <matchdate>2018/11/17</matchdate>
+    <player1no>1</player1no>
+    <player1score>2</player1score>
+    <player1win>0</player1win>
+    <player2no>2</player2no>
+    <player2score>4</player2score>
+    <player2win>1</player2win>
+  </matchdata>
+  <matchdata>
+    <matchno>2</matchno>
+    <matchdate>2018/11/17</matchdate>
+    <player1no>2</player1no>
+    <player1score>2</player1score>
+    <player1win>0</player1win>
+    <player2no>1</player2no>
+    <player2score>4</player2score>
+    <player2win>1</player2win>
+  </matchdata>
+</response>
