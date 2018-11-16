@@ -23,7 +23,7 @@
       $memberList = array();
 
       // 対戦データヘッダ読み込み
-      $xml_obj = simplexml_load_file($utils->$matchRecordHeader);
+      $xml_obj = simplexml_load_file($utils->$memberListXML);
 
       if ($xml_obj === FALSE)
       {
