@@ -1,5 +1,5 @@
 <?php
-  require_once '/library/DataUtils.php';
+  require_once '../DataUtils.php';
 
   function getMemberTest()
   {

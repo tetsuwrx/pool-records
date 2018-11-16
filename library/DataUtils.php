@@ -1,5 +1,5 @@
 <?php
-  require_once '/library/Utils.php';
+  require_once '../Utils.php';
 
   /**
    * データ操作関連共通ライブラリ
